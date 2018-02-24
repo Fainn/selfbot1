@@ -111,6 +111,7 @@ class Selfbot(commands.Bot):
         if not hasattr(self, 'uptime'):
             self.uptime = datetime.datetime.utcnow()
         print(textwrap.dedent('Logged in!'))
+        await self.change_presence(game = discord.Game(name="my death", url = "https://twitch.tv/Ace", type =1))
 
         print(dir(self))
         await self.change_presence(status=discord.Status.invisible, afk=True)
